@@ -1,0 +1,60 @@
+---
+title: "ex-10"
+author: "Vignesh"
+date: "28 September 2023"
+output: html_document
+---
+
+
+## load libraries and datasets
+
+```{r include=FALSE}
+library(tidyverse)
+library(nycflights13)
+```
+
+
+## summarise() Exercises
+
+1. Brainstorm at least 5 different ways to assess the typical delay characteristics of a group of flights. Consider the following scenarios:
+    a. A flight is 15 minutes early 50% of the time, and 15 minutes late 50% of the time
+ 
+    
+    b. A flight is always 10 minutes late
+
+    
+    c. A flight is 30 minutes early 50% of the time, and 30 minutes late 50% of the time.
+ 
+  
+    d. 99% of the time a flight is on time. 1% of the time it's 2 hours late.
+    
+    
+    
+    Which is more important: arrival delay or departure delay ?
+    
+    both arrival delay as well as departure delay is important depends on the situation or the question been asked.
+    
+2. Come up with another approach that will give you the same output as not_cancelled %>% count(dest) and not_cancelled %>% count(tailnum,wt = distance) (without using count())
+
+
+The above results can be compared to check the similarity / differences.
+
+
+
+3. Our definition of cancelled flights (is.na(dep_delay) | is.na(arr_delay)) is slightly suboptimal. Why? Which is the most important column?
+
+The most important column would be arr_delay.
+
+
+4. Look at the number of cancelled flights per day. Is there a pattern ? Is the proportion of cancelled flights related to the average delay ?
+
+
+
+5. Which carrier has the worst delays ? Challenge: can you disentangle the effects of bad airports vs bad carriers? Why/Why not ? (Hint: think about flights %>% group_by(carrier,dest) %>% summarise(n()))
+
+which carrier has the worst delays ?
+
+The first carrier has the most average delay.
+
+
+6. What does the sort argument to count() do. When might you use it?
